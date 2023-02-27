@@ -1,6 +1,7 @@
 import pygame
 import random
 from variables import *
+from outils import *
 import time
 
 class Piece():
@@ -81,6 +82,7 @@ class Tetris():
         #Condition de fin de partie
         for i in range(self.col):
             if self.grille[0][i] or (self.compteur <= 0 and self.mode == 1):
+                jouer_son("sons/game-over.wav")
                 return True
 
         if self.inter < 0:
@@ -173,6 +175,7 @@ class Tetris():
 
         if combo > 0:
             self.score += 10 * (combo * 3)
+            jouer_son("sons/score.wav")
 
     #Definis la vitesse du jeu en fonction du niveau
     def intervalle(self):
@@ -216,6 +219,7 @@ class Bouton():
         if self.rect.collidepoint(pos):
 
             if (pygame.mouse.get_pressed()[0] == 1):
+                jouer_son("sons/select.wav")
                 action = True
 
         surface.blit(self.texte, ( self.rect.x, self.rect.y))

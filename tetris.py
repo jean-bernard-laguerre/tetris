@@ -7,12 +7,17 @@ pygame.init()
 fenetre = pygame.display.set_mode((800,900))
 tdr = pygame.time.Clock()
 
-jeu = Tetris(50, 50)
+pygame.mixer.music.load("musique/Strobotone - Platformer Theme 01.mp3")
 police = pygame.font.Font('polices/Orbitron-Regular.ttf', 32)
 bg_image = pygame.image.load('images/bg_tetris.jpg')
 bg_image_rect = bg_image.get_rect()
-tps = 0
+
+pygame.mixer.music.set_volume(.7)
+pygame.mixer.music.play(-1)
+jeu = Tetris(50, 50)
 statut_partie = 0
+tps = 0
+
 
 
 def ecran_menu():
