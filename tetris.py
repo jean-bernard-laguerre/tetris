@@ -9,10 +9,11 @@ tdr = pygame.time.Clock()
 
 pygame.mixer.music.load("musique/Strobotone - Platformer Theme 01.mp3")
 police = pygame.font.Font('polices/Orbitron-Regular.ttf', 32)
+police_titre = pygame.font.Font('polices\Monoton-Regular.ttf', 128)
 bg_image = pygame.image.load('images/bg_tetris.jpg')
 bg_image_rect = bg_image.get_rect()
 
-pygame.mixer.music.set_volume(.7)
+pygame.mixer.music.set_volume(.3)
 pygame.mixer.music.play(-1)
 jeu = Tetris(50, 50)
 statut_partie = 0
@@ -21,6 +22,9 @@ tps = 0
 
 
 def ecran_menu():
+
+    titre = police_titre.render("TETRIS", 1 ,'white')
+    fenetre.blit(titre, (160, 250))
     
     if Bouton("Survie", 200, 600, police, "white").affichage(fenetre):
         nouvelle_partie()

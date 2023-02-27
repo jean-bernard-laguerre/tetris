@@ -70,7 +70,7 @@ class Tetris():
                     surface.blit(pygame.image.load(f'images/bloc{self.grille[i][j]}.png'), (a, b))
 
         #Bordures
-        pygame.draw.rect(surface, 'grey40', self.rect, 2)
+        pygame.draw.rect(surface, 'grey20', self.rect, 2)
         
         
         self.test_ligne()
